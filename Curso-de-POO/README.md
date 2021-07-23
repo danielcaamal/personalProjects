@@ -1,13 +1,6 @@
 # CURSO DE PROGRAMACIÓN ORIENTADA A OBJETOS
 **Impartido por:** Anahí Salgado Díaz de la Vega en [Platzi](http:/https://platzi.com/profesores/anncode// "Platzi")
 
-**Tabla de contenido**
-
-* [Introducción](#Introducción.)
-	* [¿Qué resuelve la Programación Orientada a Objetos POO?](#¿Qué resuelve la Programación Orientada a Objetos POO?)
-	* [Paradigma Orientada a Objetos.](#Paradigma Orientada a Objetos.)
-
-
 ## Introducción.
 
 ### ¿Qué resuelve la Programación Orientada a Objetos POO?
@@ -68,9 +61,11 @@ En la parte superior se colocan los atributos o propiedades, y debajo las operac
 Una forma de representar las relaciones que tendrá un elemento con otro es a través de las flechas:
 - **Asociación:**  Significa que un elemento contiene al otro en su definición :fa-long-arrow-right:
 -**Herencia** La dirección de la flecha irá desde el hijo hasta el padre.
+-**Agregación** Es lo que comunmente se conoce como relación uno a muchos.
+-**Composición**  Una de las clases no podría existir sin la otra.
 
-![](https://images.pexels.com/photos/7999461/pexels-photo-7999461.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
 
+![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gleek.io%2Fblog%2Fclass-diagram-arrows.html&psig=AOvVaw3VCm8r1LtMgZCWSmhLmKfx&ust=1627162070542000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCMCZiZyR-vECFQAAAAAdAAAAABAD)
 
 ## Orientación a Objetos.
 ### Objetos.
