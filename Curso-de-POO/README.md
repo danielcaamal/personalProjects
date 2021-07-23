@@ -69,8 +69,7 @@ Una forma de representar las relaciones que tendrá un elemento con otro es a tr
 - **Asociación:**  Significa que un elemento contiene al otro en su definición :fa-long-arrow-right:
 -**Herencia** La dirección de la flecha irá desde el hijo hasta el padre.
 
-![]
-(https://images.pexels.com/photos/7999461/pexels-photo-7999461.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
+![](https://images.pexels.com/photos/7999461/pexels-photo-7999461.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
 
 
 ## Orientación a Objetos.
