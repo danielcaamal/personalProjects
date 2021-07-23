@@ -3,9 +3,10 @@
 
 **Tabla de contenido**
 
-[TOCM]
+* [Introducción](#Introducción.)
+	* [¿Qué resuelve la Programación Orientada a Objetos POO?](#¿Qué resuelve la Programación Orientada a Objetos POO?)
+	* [Paradigma Orientada a Objetos.](#Paradigma Orientada a Objetos.)
 
-[TOC]
 
 ## Introducción.
 
