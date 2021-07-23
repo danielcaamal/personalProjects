@@ -59,22 +59,29 @@ En la parte superior se colocan los atributos o propiedades, y debajo las operac
 - default (~)
 
 Una forma de representar las relaciones que tendrá un elemento con otro es a través de las flechas:
-- **Asociación:**  Significa que un elemento contiene al otro en su definición :fa-long-arrow-right:
--**Herencia** La dirección de la flecha irá desde el hijo hasta el padre.
--**Agregación** Es lo que comunmente se conoce como relación uno a muchos.
--**Composición**  Una de las clases no podría existir sin la otra.
+- **Asociación:**  Significa que un elemento contiene al otro en su definición
+- **Herencia** La dirección de la flecha irá desde el hijo hasta el padre.
+- **Agregación** Es lo que comúnmente se conoce como relación uno a muchos.
+- **Composición**  Una de las clases no podría existir sin la otra.
 
-
-![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gleek.io%2Fblog%2Fclass-diagram-arrows.html&psig=AOvVaw3VCm8r1LtMgZCWSmhLmKfx&ust=1627162070542000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCMCZiZyR-vECFQAAAAAdAAAAABAD)
+[![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gleek.io%2Fblog%2Fclass-diagram-arrows.html&psig=AOvVaw3VCm8r1LtMgZCWSmhLmKfx&ust=1627162070542000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCMCZiZyR-vECFQAAAAAdAAAAABAD)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gleek.io%2Fblog%2Fclass-diagram-arrows.html&psig=AOvVaw3VCm8r1LtMgZCWSmhLmKfx&ust=1627162070542000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCMCZiZyR-vECFQAAAAAdAAAAABAD)
 
 ## Orientación a Objetos.
 ### Objetos.
+Los **Objetos** son aquellos que tienen propiedades y comportamientos, también serán sustantivos.
+- **Propiedades** son los atributos que caracterizan un Objeto, como el tamaño, forma, etc.
+- **Comportamientos** serán las operaciones que el objeto puede hacer, suelen ser verbos.
+
 ### Abstracción y clases.
+Una **Clase** es el modelo por el cual nuestro objetos se van a construir y nos van a permitir generar más objetos.
+La **Abstracción** es cuando separamos los datos de un objeto para generar un molde.
+
 ### Modularidad.
-### Casos de estudio: Uber.
-### RETO 1
+La **Modularidad** implica dividir un sistema en partes pequeñas y estas serán nuestros módulos pudiendo funcionar de manera independiente.
+
 ## Análisis POO.
 ### Clases en UML.
+![](https://drive.google.com/file/d/1OX2CSfWBRGwbgoh87BLltqU0IwEcoPBJ/view?usp=sharing)
 ### Uber: Objetos
 ### Herencia.
 ### Uber: Herencia
