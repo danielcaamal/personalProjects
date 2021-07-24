@@ -1,2 +1,3 @@
 /venv
-/assets
+**/assets
+Main.class
