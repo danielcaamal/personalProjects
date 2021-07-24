@@ -64,8 +64,6 @@ Una forma de representar las relaciones que tendrá un elemento con otro es a tr
 - **Agregación** Es lo que comúnmente se conoce como relación uno a muchos.
 - **Composición**  Una de las clases no podría existir sin la otra.
 
-[![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gleek.io%2Fblog%2Fclass-diagram-arrows.html&psig=AOvVaw3VCm8r1LtMgZCWSmhLmKfx&ust=1627162070542000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCMCZiZyR-vECFQAAAAAdAAAAABAD)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gleek.io%2Fblog%2Fclass-diagram-arrows.html&psig=AOvVaw3VCm8r1LtMgZCWSmhLmKfx&ust=1627162070542000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCMCZiZyR-vECFQAAAAAdAAAAABAD)
-
 ## Orientación a Objetos.
 ### Objetos.
 Los **Objetos** son aquellos que tienen propiedades y comportamientos, también serán sustantivos.
@@ -80,18 +78,96 @@ La **Abstracción** es cuando separamos los datos de un objeto para generar un m
 La **Modularidad** implica dividir un sistema en partes pequeñas y estas serán nuestros módulos pudiendo funcionar de manera independiente.
 
 ## Análisis POO.
-### Clases en UML.
-![](https://drive.google.com/file/d/1OX2CSfWBRGwbgoh87BLltqU0IwEcoPBJ/view?usp=sharing)
-### Uber: Objetos
+### Sintaxis de clases.
+Se tiene diversas sintaxis para definir clases en los siguientes lenguajes:
+*En Java:*
+```Java
+class Person{
+    String name="";
+    void walk(){}
+}
+```
+
+*En Python:*
+```Python
+def Person:
+    name =""
+    def walk():
+        pass
+```
+
+*En JavaScript:*
+```JavaScript
+class Person{
+    constructor(){
+        this.name="";
+    }
+    walk(){}
+}
+```
+
+*En PHP:*
+```PHP
+class Person{
+    $name="";
+    function walk(){}
+}
+```
+
 ### Herencia.
-### Uber: Herencia
-### RETO 2
+"Don´t repeat yourself": Promueve la reducción de duplicación en programación.
+La *Reutilización* es un concepto fundamental de la POO donde recae la **Herencia**, esto nos permite crear una clase a partir de otra clase, donde la clase (hijo) puede "heredar" todos o algunos atributos y/o métodos de la clase de la que depende (padre).
+- Se definen la Superclase (padre) y la Subclase (hijo).
+
 ## Clases, Objetos, Constructores.
-### Definiciones.
 ### Clases: 
-#### Java.
-#### Python.
-#### JavaScript.
+A continuación se definen cada una de las versiones de código implementadas en los 4 lenguajes de programación para la clase ACCOUNT, la cual tiene como propiedades:
+- id (integer)
+- name (string)
+- document (string)
+- email (string)
+- password (string)
+
+#### Java
+```Java
+public class Account {
+    Integer id;
+    String name;
+    String document;
+    String email;
+    String password;
+}
+```
+#### Python
+```Python
+class Account:
+    id = int
+    name = str
+    document = str
+    email = str
+    password = str
+```
+#### JavaScript
+```JavaScript
+function Account(){
+    this.id;
+    this.name;
+    this.document;
+    this.email;
+    this.password;
+}
+```
+#### PHP
+```PHP
+<?php
+class Account{
+    public $id;
+    public $name;
+    public $document;
+    public $email;
+    public $password;
+}
+```
 ### Método Constructor.
 ### Objetos.
 #### Java.
