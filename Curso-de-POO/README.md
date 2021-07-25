@@ -121,6 +121,7 @@ La *Reutilización* es un concepto fundamental de la POO donde recae la **Herenc
 
 ## Clases, Objetos, Constructores.
 ### Clases: 
+Como se mencionó anteriormente una **Clase** es el modelo por el cual nuestro objetos se van a construir y nos van a permitir generar más objetos.
 A continuación se definen cada una de las versiones de código implementadas en los 4 lenguajes de programación para la clase ACCOUNT, la cual tiene como propiedades:
 - id (integer)
 - name (string)
@@ -130,7 +131,7 @@ A continuación se definen cada una de las versiones de código implementadas en
 
 *En Java:*
 ```Java
-public class Account {
+class Account {
     Integer id;
     String name;
     String document;
@@ -149,7 +150,7 @@ class Account:
 ```
 *En JavaScript:*
 ```JavaScript
-function Account(){
+class Account{
     this.id;
     this.name;
     this.document;
@@ -168,18 +169,99 @@ class Account{
     public $password;
 }
 ```
+
 ### Método Constructor.
+Los **métodos constructores** dan un estado inicial al objeto y podemos añadirle algunos datos al objeto mediante estos métodos. Los atributos o elementos que pasemos a través del constructor serán los datos mínimos que necesita el objeto para que pueda "vivir".
+*Características:*
+- Dan el estado inicial
+- Tienen el mismo nombre de la clase
+
+*En Java:*
+```Java
+public Account(String name){
+    this.name = name;
+}
+```
+
+*En Python:*
+```Python
+def __init__(self, name):
+    self.name = name
+```
+
+*En JavaScript:*
+```JavaScript
+constructor(name){
+    this.name = name
+}
+```
+
+*En PHP:*
+```PHP
+public function __construct($name){
+    $this->name = name;
+}
+```
+
 ### Objetos.
-#### Java.
-#### Python.
-#### JavaScript.
-### RETO 3
+Los **objetos** nos ayudan a crear instancias de una clase, el objeto es el resultado de lo que modelamos (los parámetros declarados)
+
+*En Java:*
+```Java
+Account account = new Account("Daniel");
+```
+
+*En Python:*
+```Python
+account = Account("Daniel")
+```
+
+*En JavaScript:*
+```JavaScript
+let account = new Account("Daniel");
+```
+
+*En PHP:*
+```PHP
+$account = new Account("Daniel")
+```
+
 ## Herencia.
 ### Herencia.
-#### Java.
-#### PHP.
-#### Python.
-#### JavaScript.
+*En Java:*
+```Java
+class UberX extends Car{
+    public UberX(){
+        super();
+    }
+}
+```
+
+*En Python:*
+```Python
+class UberX(Car):
+    def __init__(self):
+        super().__init__()
+```
+
+*En JavaScript:*
+```JavaScript
+class UberX extends Car{
+    constructor(){
+        super()
+    }
+}
+```
+
+*En PHP:*
+```PHP
+class UberX extends Car{
+    public function __construct(){
+        parent::__construct();
+    }
+}
+```
+
 ### Otros tipos de herencia.
 ### RETO 4
 ## Encapsulamiento.

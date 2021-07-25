@@ -1,3 +1,5 @@
 /venv
 **/assets
-Main.class
+*.class
+.vscode
+**/__pycache__
