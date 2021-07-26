@@ -227,7 +227,7 @@ $account = new Account("Daniel")
 ```
 
 ## Herencia.
-### Herencia.
+
 *En Java:*
 ```Java
 class UberX extends Car{
@@ -262,12 +262,23 @@ class UberX extends Car{
 }
 ```
 
-### Otros tipos de herencia.
-### RETO 4
+
 ## Encapsulamiento.
-### Definición.
-### Ejemplos.
+El **encapsulamiento** también llamado "ocultamiento de información" es hacer que un dato sea inviolable, inalterable cuando se le asigne un modificador de acceso (no se trata solo de ocultar el dato sino también de protegerlo), aplicarlo correctamente te permite:
+- Controlar la manera enn que los datos son accedidos o modificados.
+- El código se vuelve flexible y fácil de modificar.
+- Permite modificar partes del código sin afectar otras secciones.
+- Ayuda a mantener la integridad de los datos.
+
+Tipos de Modificadores de Acceso:
+- **Public:** Permite ser accedido por cualquier elemento o cualquier clase.
+- **Protected:** Solo podrá ser accedido a nivel de la clase, paquetes y subclases.
+- **Default:** Permite el acceso a nivel de clases internas y paquetes (No permite ver los atributos de herencias).
+- **Private:** Solo permite modificarse dentro de la clase.
+
 ## Polimorfismo.
-### Definición.
-### Ejemplos.
-## Conclusiones.
+**Polimorfismo** es construir métodos con el mismo nombre pero con comportamiento diferente.
+Algunos conceptos que son de utilidad son los siguientes:
+1. de **Sobrecarga:** Cambiar el método agregando nuevos atributos.
+2. de **Sobre escritura:** Cambiar el comportamiento de un método que definió una super clase. 
+3. con **Subtipado:** Usan el mismo nombre de método en diferentes clases.
