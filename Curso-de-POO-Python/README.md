@@ -44,7 +44,10 @@ class Hotel:
 ```
 
 ## Tipos de datos abstractos, clases e instancias
-En Python todo es un objeto y todo tiene un tipo y esto nos permite interactuar con el mismo objeto:
+En Python todo es un objeto y todo tiene un tipo y esto nos permite interactuar con el mismo objeto.
+
+[Ejemplo](instancias.py)
+
 *Formas de interactuar con los objetos*
 - Creación 
 - Manipulación
@@ -54,43 +57,149 @@ En Python todo es un objeto y todo tiene un tipo y esto nos permite interactuar 
 - Decomposición
 - Abstracción
 - Encapsulamiento
-[Ejemplo](https://github.com/danielcaamal/personalProjects/tree/master/Curso-de-POO-Python/instancias.py)
+
 
 ## Decomposición
 **Decompomponer** es partir un problema es problemas más pequeños, las Clases permiten crear mayores abstracciones en forma de componentes donde cada Clase se encarga de una parte del problema y el programa se vuelve más fácil de mantener.
-[Ejemplo](https://github.com/danielcaamal/personalProjects/tree/master/Curso-de-POO-Python/decomposicion.py)
+
+[Ejemplo](decomposicion.py)
 
 ## Abstracción
 **Abstraer** es enfocarnos en la información relevante, separar la información central de los detalles secundarios.
 
+[Ejemplo](abstraccion.py)
 
 ## Funciones
+*Ejemplos de funciones:*
+- Funciones como objetos de primera clase: las funciones son objetos de primera clase, pueden ser pasados y utilizados como argumentos al igual que cualquier otro objeto (strings, enteros, flotantes, lista, etc).
+- Funciones anidadas: Al igual que las condicionales y bucles, también puedes colocar funciones dentro de otra función.
 
-## Setters, Getters y Property
+### Decorador
+Los decoradores son una forma sencilla de llamar funciones de orden mayor, es decir, funciones que toman otra función como parámetro y/o retornan otra como función como parámetro, así un decorador añade capacidades a una función sin modificarla.
+Un decorador básicamente toma una función, le añade una funcionalidad y la retorna.
+```Python
+def funcion_decoradora(funcion):
+	def wrapper():
+		print("Este es el último mensaje...")
+		funcion()
+		print("Este es el primer mensaje ;)")
+	return wrapper
 
-## Encapsulación, Getters and Setters
+def zumbido():
+	print("Buzzzzzz")
+
+zumbido = funcion_decoradora(zumbido)
+```
+
+Aunque es complejo puede simplificarse de esta forma:
+```Python
+@function_decoradora
+def zumbido():
+    print("Buzzzzz")
+```
+
+### Setters, Getters
+En Python los getters y setters tiene el objetivo de asegurar el encapsulamiento de datos.
+- Una variable *privada* de declara al colocar un guión al inicio de esta (_) y son utilizados para añadir lógica de validación al momento de obtener y definir un valor y para evitar el acceso directo al campo de una clase. En Python ninguna variable es completamente privada, en cambio es posible alterar los métodos de las clases para tener efectos colaterales que causen el mismo efecto.
+```Python
+class Millas:
+	def __init__(self, distancia = 0):
+		self.distancia = distancia
+
+	def convertir_a_kilometros(self):
+		return (self.distancia * 1.609344)
+
+	# Método getter
+	def obtener_distancia(self):
+		return self._distancia
+
+	# Método setter
+	def definir_distancia(self, valor):
+		if valor < 0:
+			raise ValueError("No es posible convertir distancias menores a 0.")
+		self._distancia = valor
+```
+
+### Property
+xD
+
+## Encapsulamiento
+Permite agrupar datos y su comportamiento, controlar el acceso a dichos datos y previene modificaciones no autorizadas.
+
+[Ejemplo](encapsulamiento.py)
 
 ## Herencia
+Permite modelar una jerarquía de clases, compartir comportamientos común en la jerarquía y reutilizar código.
+Si tenemos un comportamiento que es común entre una serie de objetos de la misma categoría, este comportamiento debe enviarse a una clase superior que permita compartirlo con sus clases hijas. Esto facilita la mantenibilidad del código haciéndolo más estable.
+
+[Ejemplo](herencia.py)
 
 ## Polimorfismo
+Es la habilidad de tomar varias formas, en python se nos permite cambiar el comportamiento de una superclase para adaptarlo a una subclase.
 
 ## Introducción a la complejidad algorítmica
+La complejidad algorítmica nos permite comparar la eficiencia de algoritmos:
+$$T(n)$$
 
-## Conteo abstracto de operación
+*Tipos de aproximaciones para determinar la eficiencia de un algoritmo:*
+- Cronometrar el tiempo en el que corre un algoritmo, en este caso utilizando librerías especializadas como Time [Ejemplo](complejidad_algoritmica.py)
+```Python
+comienzo = time.time()
+factorial(n)
+final = time.time()
+print(final - comienzo)
+```
 
-## Notación asintótica
+- Contar los pasos con una medida abstracta de operación donde nada más importa el término de mayor tamaño, esta aproximación se enfoca en evaluar el mejor de los casos, el promedio y el peor de los casos (Big O) [Ejemplo]()
+```Python
+# Ley de la suma
+def f(n):
+    for i in range(n):
+        print(i)
 
-## Clases de complejidad algorítmica
+    for i in range(n):
+        print(i)
 
-## Búsqueda lineal
+# O(n) + O(n) => O(n+n) => O(2n) => O(n)
+#---------------------------------------#
+# Ley de la multiplicación 
+def f(n):
+    for i in range(n):
+        for j in range(n):
+            print(i, j)
 
-## Búsqueda binaria
+# O(n) + O(n) => O(n*n) => O(n**2)
+#---------------------------------------#
+# Recursividad múltiple
+def fibonacci(n):
+    if n == 0 or n == 1:
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)
 
-## Ordenamiento burbuja
+# O(2**n)
+```
+- Contar los pasos con conforme nos aproximamos al infinito
 
-## Ordenamiento por inserción
+### Clases de complejidad algorítmica O(n)
+- O(1) Constante
+- O(n) Lineal
+- O(log n) Logarítmica
+- O(n*log n) Logarítmica lineal
+- O(n**2) Polinomial
+- O(2**n) Exponencial
 
-## Ordenamiento por mezcla
+## Algoritmos de búsqueda y ordenación
+**Tipos de búsqueda:***
+- Búsqueda lineal
+Busca todos los elementos de manera secuencial [Ejemplo](busqueda_lineal.py)
+- Búsqueda binaria
+El problema se divide en 2 en cada iteración para lista ordenadas [Ejemplo](busqueda_binaria.py)
+
+**Tipos de ordenamiento:**
+- Ordenamiento burbuja
+- Ordenamiento por inserción
+- Ordenamiento por selección
+- Ordenamiento por mezcla
 
 ## Ambientes Virtuales
 
