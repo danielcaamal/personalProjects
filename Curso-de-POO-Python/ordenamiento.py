@@ -70,6 +70,7 @@ def mezcla(lista):
             lista[k] = derecha[j]
             j += 1
             k += 1
+        
         print('Izquierda: ', izquierda,"\n" ,"---"*5)
         print('Derecha: ', derecha,"\n" ,"---"*5)
         print('Lista: ', lista,"\n" ,"***"*5)

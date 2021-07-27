@@ -201,10 +201,6 @@ El problema se divide en 2 en cada iteración para lista ordenadas [Ejemplo](bus
 - Ordenamiento por selección
 - Ordenamiento por mezcla
 
-## Ambientes Virtuales
-
-## Graficado simple
-
 ## Introducción a la optimización
 
 ## El problema del morral
