@@ -1,19 +1,29 @@
+from os import write
 import sys
+import csv
+import os
 
-clients = [
-    {
-        'name': 'Pablo',
-        'company': 'Google',
-        'email': 'pablo@google.com',
-        'position': 'Software Engineer'
-    },
-    {
-        'name': 'Ricardo',
-        'company': 'Facebook',
-        'email': 'ricardo@facebook.com',
-        'position': 'Data Engineer'
-    },
-]
+CLIENT_TABLE = '.clients.csv'
+CLIENT_SCHEMA = ['name', 'company','email' ,'position']
+
+clients = []
+
+def _initialice_clients_from_storage():
+    with open(CLIENT_TABLE,mode='r') as f:
+        reader = csv.DictReader(f, fieldnames=CLIENT_SCHEMA)
+        for row in reader:
+            clients.append(row)
+
+
+def _save_clients_to_storage():
+    tmp_table_name = '{}.tmp'.format(CLIENT_TABLE)
+    with open(tmp_table_name, mode='w') as f:
+        writer = csv.DictWriter(f, fieldnames=CLIENT_SCHEMA)
+        writer.writerows(clients)
+        
+        os.remove(CLIENT_TABLE)
+        os.rename(tmp_table_name, CLIENT_TABLE)
+
 
 def create_client(client):
     global clients
@@ -54,7 +64,7 @@ def list_clients():
     global clients
     print('\n','*'*100,'\n')
     print('Client\'s List')
-    print('uid\t | name\t\t | company\t | email\t\t | position')
+    print('uid\t | name\t\t\t | company\t | email\t\t\t | position')
     for idx, client in enumerate(clients):
         print('{uid}\t | {name}\t | {company}\t | {email}\t | {position}'.format(
             uid=idx,
@@ -64,12 +74,6 @@ def list_clients():
             position=client['position']))
     
     print('\n')
-    print(dir({1, 2, 3}))
-    a = [0, 1, 2, 2, 4, 5]
-    b = [0, 1, 5]
-    c = set(a)
-    b = set(b)
-    print(len(b.intersection(a)))
 
 
 
@@ -105,7 +109,9 @@ def _get_client_from_user():
         }
     return client
 
+
 def run():
+    _initialice_clients_from_storage()
     command = input(INTRO)
     command = command.upper()
 
@@ -115,18 +121,18 @@ def run():
     elif command == 'C':
         client = _get_client_from_user()
         create_client(client)
-        list_clients()
+        #list_clients()
 
     elif command == 'U':
         client_id = int(_get_client_field('id'))
         updated_client = _get_client_from_user()
         update_client(client_id, updated_client)
-        list_clients()
+        #list_clients()
 
     elif command == 'D':
         client_id = int(_get_client_field('id'))
         delete_client(client_id)
-        list_clients()
+        #list_clients()
     
     elif command == 'S':
         client_name = _get_client_field('name')
@@ -137,7 +143,9 @@ def run():
             print(f'The client: {client_name} IS NOT in our client\'s list')
 
     else:
-        print('El comando es inválido')
+        print('Invalid command')
+    
+    _save_clients_to_storage()
 
 
 if __name__ == "__main__":

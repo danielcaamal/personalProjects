@@ -198,7 +198,137 @@ Las **tuplas** o **tuples** son similares a las lista
 - Sus valores están separadas por comas y se situán entre paréntesis *tuple()*
 - Un uso muy común es regresar más de un valor a la vez
 
-Los **conjuntos** o **sets** son una colección sin orden que no permite elementos duplicados.
+Los **conjuntos** o **sets** son una colección sin orden que no permite elementos duplicados, sin embargo, es mutable:
 - Se inicializan con *set()* 
 - Para añadir elementos se utiliza el método *add()*
 - Para eliminar elementos se utiliza el método *remove()*
+
+
+## Introducción al módulo collections
+Este módulo nos brinda un conjunto de objetos primitivos que nos permiten extender el comportamiento de las built in collections que posee python, y nos otorga estructuras de datos adicionales:
+- Dict => UserDict
+- List => UerList
+- String => UserString
+
+Ejemplo:
+```Python
+class SecretDict(collections.UserDict):
+
+   def _password_is_valid(self, password):
+        …
+
+    def _get_item(self, key):
+        … 
+
+    def __getitem__(self, key):
+         password, key = key.split(‘:’)
+         
+         if self._password_is_valid(password):
+              return self._get_item(key)
+         
+         return None
+
+my_secret_dict = SecretDict(...)
+my_secret_dict[‘some_password:some_key’] # si el password es válido, regresa el valor
+```
+
+## Python Comprehensions
+Permiten generar secuencias a partir de otras secuencias
+```Python
+#List comprehension
+[element for element in element_list if element_meets_condition]
+#Dict comprehension
+{key: element for element in element_list if element_meets_condition}
+#Set comprehension
+{element for element in element_list if element_meets_condition}
+```
+
+## Archivos en Python
+*Manipulación*-
+- La función *open()* nos permite leer archivos
+    - *f = open('some_file')*
+- Es importante siempre cerrar el archivo con la función *close()* para que se escriban los datos y no se desperdicie memoria
+    - *f.close()*
+- Una mejor forma de manipular archivo es utilizando context managers porque garantizan que el archivo se cierre
+- Existen varios modos de abrir un archivo, los más importatnes son r (read) y w (write)
+    - *with open(filename, mode='w') as f*
+
+El módulo csv nos permite manipular archivos con terminación .csv
+- csv significa comma separated values
+- Es un formato para almacenar datos tabulares
+
+Para utilizarlo lo importamos con la siguiente declaración:
+- **Import csv**
+
+Existen dos readers y dos writers
+- csv.reader y csv.writer nos permiten manipular los valores a través de listas que representan filas
+    - Solo se puede acceder por índice a los valores
+- DictReader y csv.DictWriter nos permiten manipular los valores a través de diccionarios que representan filas
+    - Se puede acceder a través de llaves a los valores
+
+## Decoradores
+Los *Decoradores* permiten extender y modificar el funcionamiento de las funciones
+Los decoradores envuelven a otra función y permiten ejecutar código antes o después de qué es llamada
+
+*Ejemplo:*
+```Python
+def lower_case(func):
+    def wrapper():
+        # execute code before
+        result = func()
+        # execute code after
+        return result
+    return wrapper
+```
+## Programación Orientada a Objetos
+La programación orientada a objetos es un paradigma de programación que otorga los medios para estructurar programas de tal manera que las propiedades y comportamientos estén envueltos en objetos individuales.
+
+Para poder entender cómo modelar estos objetos tenemos que tener claros cuatro principios:
+- **Encapsulamiento:** Permite representar aspectos repetitivos
+- **Abstracción:** Permite representar objetos lo más sencillo posible
+- **Herencia:** Permite generar jerarquías
+- **Polimorfismo:** Permite modificar métodos
+
+Las clases simplemente nos sirven como un molde para poder generar diferentes instancias.
+
+*Ejemplo de clases:*
+```Python
+class Airplane:
+    def __init__(self, passengers, seats, pilots=[]):
+        self.passengers = passengers
+        self.seats = seats
+        self._pilots = pilots
+
+    def takeoff(self):
+        pass
+```
+
+*Ejemplo de herencia:*
+```Python
+class Vehicle:
+    def __init__(self, current_speed):
+        self.current_speed
+
+
+class Airplane(Vehicle)
+    def __init__ …
+        super().__init__(current_speed=0)
+
+    def current_speed():
+        return ‘{} km/h’.format(self.current_speed)
+```
+
+## Introducción a click
+
+Click es un framework que nos permite crear aplicaciones de Command Line
+Click utiliza decoradores para implementar su funcionalidad
+Nos otorga una interfaz que podemos personalizar
+- También autogenera ayuda para el usuario
+
+Los decoradores más importantes que nos otorga son:
+- @click.group
+- @click.command
+- @click.argument
+- @click.option
+
+También realiza las conversiones de tipo por nosotros
