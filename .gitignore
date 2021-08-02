@@ -5,3 +5,5 @@
 **/__pycache__
 **/pv.egg-info
 *.csv
+*.json
+node_modules

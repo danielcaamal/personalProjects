@@ -28,3 +28,16 @@ XML.
 - *Compilar:* Es generar código ejecutable por una máquina, que puede ser física o abstracta como la máquina virtual de Java.
 - *Transpilar:* Es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje cuyo comportamiento es el mismo que el
 original.
+
+## Ventajas y desventajas
+**Callbacks**
+- Ventajas: Simple(una función que recibe otra función). Son universales, corren en cualquier navegador.
+- Desventajas: Composición tediosa, anidando cada vez más elementos. Caer en Callback Hell.
+
+**Promesas**
+- Ventajas: Fácilmente enlazables .Then( return… ).Then - Fácil e intuitivo de leer.
+- Desventajas: Posible error si no se retorna el siguiente llamado. No corre en todos los navegadores.
+
+**Async-Await** 
+- Ventajas: Se puede usar try-catch. Código más ordenado e intuitivo.
+- Desventajas: No corre en todos los navegadores (se requiere un transpilador).
