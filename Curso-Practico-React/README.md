@@ -322,8 +322,9 @@ Posteriormente vamos a la terminal y ejecutamos:
 1. *git init*
 2. *npm init -y*
 3. *npm install react react-dom*
-4. *npm install webpack webpack-cli html-webpack-plugin html-loader  --save-dev*
-5. Create the file .babelrc:
+4. *npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader*
+5. *npm install webpack webpack-cli html-webpack-plugin html-loader  --save-dev*
+6. Create the file .babelrc:
 ```
 {
   "presets": [
@@ -332,7 +333,7 @@ Posteriormente vamos a la terminal y ejecutamos:
   ],
 }
 ```
-6. Create the file webpack.config.js
+7. Create the file webpack.config.js
 ```
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -378,7 +379,7 @@ module.exports = {
     }
 };
 ```
-7. Modify the package.json:
+8. Modify the package.json:
 ```
 {
   "scripts": {
@@ -386,8 +387,8 @@ module.exports = {
   },
 }
 ```
-8. *npm install --save-dev webpack-dev-server*
-9. Modify the package.json:
+9. *npm install --save-dev webpack-dev-server*
+10. Modify the package.json:
 ```
 {
   "scripts": {
@@ -396,7 +397,7 @@ module.exports = {
   },
 }
 ```
-10. npm run start | npm run build
+11. npm run start | npm run build
 
 ## Estilos con SASS
 Los preprocesadores como Sass son herramientas que nos permiten escribir CSS con una sintaxis un poco diferente y más amigable que luego se transformará en CSS normal. Gracias a Sass podemos escribir CSS con variables, mixins, bucles, entre otras características.
