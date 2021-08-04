@@ -439,7 +439,7 @@ plugins: [
 ...
 ```
 
-## Configuración final: ESLint y Git Ignore
+## Configuración: ESLint y Git Ignore
 El Git Ignore es un archivo que nos permite definir qué archivos NO queremos publicar en nuestros repositorios. Solo debemos crear el archivo .gitignore y escribir los nombres de los archivos y/o carpetas que no queremos publicar.
 
 Los linters como ESLint son herramientas que nos ayudan a seguir buenas prácticas o guías de estilo de nuestro código.
@@ -449,5 +449,36 @@ Se encargan de revisar el código que escribimos para indicarnos dónde tenemos 
 *npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y*
 
 Podemos configurar las reglas de ESLint en el archivo .eslintrc.
+
+**Instalación de Imágenes**
+*npm install --save-dev file-loader*
+
+1. Configuración del File Loader en Webpack (webpack.config.js): 
+```
+rules: [
+  {
+    test: /\.(png|gif|jpg)$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: { name: 'assets/[hash].[ext]' },
+      }
+    ],
+  },
+],
+```
+
+2. Uso de File Loader con React:
+```
+import React from 'react';
+import nombreDeLaImagen from '../assets/static/nombre-del-archivo';
+
+const Component = () => (
+  <img src={nombreDeLaImagen} />
+);
+
+export default Component;
+```
+
 
 
