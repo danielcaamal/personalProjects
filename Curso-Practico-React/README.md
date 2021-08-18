@@ -448,9 +448,49 @@ Se encargan de revisar el código que escribimos para indicarnos dónde tenemos 
 **Instalación de ESLint:**
 *npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y*
 
-Podemos configurar las reglas de ESLint en el archivo .eslintrc.
+Podemos configurar las reglas de ESLint en el archivo .eslintrc:
 
-**Instalación de Imágenes**
+```
+{
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/prop-types": 0,
+    "no-underscore-dangle": 0,
+    "import/imports-first": [
+      "error",
+      "absolute-first"
+    ],
+    "import/newline-after-import": "error"
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true
+  },
+  "parser": "babel-eslint"
+}
+```
+
+## Instalación de Imágenes
 *npm install --save-dev file-loader*
 
 1. Configuración del File Loader en Webpack (webpack.config.js): 
@@ -480,5 +520,55 @@ const Component = () => (
 export default Component;
 ```
 
+## Instalación de JSON Server 
+Vamos a usar JSON Server para crear una Fake API: una API ““falsa”” construida a partir de un archivo JSON que nos permite preparar nuestro código para consumir una API de verdad en el futuro.
+
+**Instalación de JSON Server:**
+```
+sudo npm install json-server -g
+```
+
+Ejecutar el servidor de JSON Server:
+```
+json-server archivoParaTuAPI.json
+```
 
 
+Los PropTypes son una propiedad de nuestros componentes que nos permiten especificar qué tipo de elementos son nuestras props: arrays, strings, números, etc.
+
+## Instalación de PropTypes:
+```
+npm install --save prop-types
+```
+
+**Uso de PropTypes:**
+
+```
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const Component = ({ name, lastName, age, list }) => {
+  // ...
+};
+
+Component.propTypes = {
+  name: PropTypes.string,
+  lastName: PropTypes.string,
+  age: PropTypes.number,
+  list: PropTypes.array,
+};
+
+export default Component;
+
+```
+
+Por defecto, enviar todas nuestras props es opcional, pero con los propTypes podemos especificar cuáles props son obligatorias para que nuestro componente funcione correctamente con el atributo isRequired.
+
+```
+Component.propTypes = {
+  name: PropTypes.string.isRequired, // obligatorio
+  lastName: PropTypes.string.isRequired, // obligatorio
+  age: PropTypes.number, // opcional,
+  list: PropTypes.array, // opcional
+};
+```
