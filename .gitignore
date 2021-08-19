@@ -1,9 +1,10 @@
-*/venv
-
-*.class
-
+**/venv
+**.class
+pv.egg-info
 **/__pycache__
 **/dist
+
+.**.csv
 
 # dependencies
 **/node_modules
