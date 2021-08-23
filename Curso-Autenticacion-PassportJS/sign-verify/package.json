@@ -1,0 +1,17 @@
+{
+  "name": "curso-autenticacion-passportjs",
+  "version": "1.0.0",
+  "description": "**Impartido por:** Guillermo Rodasen [Platzi](https://platzi.com/p/glrodasz/)",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
