@@ -4,6 +4,8 @@ pv.egg-info
 **/__pycache__
 **/dist
 
+**.mp4
+
 .**.csv
 
 # dependencies
@@ -105,3 +107,4 @@ yarn-error.log
 # Build
 **/dist
 dist/
+
