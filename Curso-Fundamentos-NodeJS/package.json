@@ -1,7 +1,6 @@
 {
   "name": "curso-fundamentos-nodejs",
   "version": "1.0.0",
-  "description": "**Given by:** Juan David Castro [Platzi](https://platzi.com/p/juandc/)",
   "main": "index.js",
   "scripts": {
     "start": "nodemon -L", 

@@ -5,7 +5,8 @@
 - [Introduction to NodeJS](#introduction-to-nodejs)
     - [Event Loop](#event-loop)
     - [Single thread](#single-thread)
-- [Handling Async](#handling-async)
+- [Modules](#modules)
+    - [Child Process](#child-process)
 
 ## Introduction to NodeJS
 ### Event Loop
@@ -20,7 +21,28 @@ Is necessary treat the errors, one error can crash all the code (disadvantage of
   <small><a href="#content">🡡 return</a></small>
 </div>
 
-## Handling Async
-### Callbacks
+## Modules
+### Globals
+NodeJS has the Object **global**, this Object contains all the basic methods and properties that we use in Node.
+*global* is aka for *this*.
+```JS
+(this === global) // true
+```
+
+Some methods used by *global* are:
+- *setTimeOut():* calls one function given at time.
+- *setInterval():* calls one function every time interval.
+- *setImmediate():* same as *setTimeOut()* but time equals 0.
+- *clearTimeOut():* stops a *setTimeOut()*.
+- *clearInterval():* stops a *setInterval()*.
+
+### Child Process
+Has two functions:
+- **spawn:** returns a stream:
+	- Is used to return big binary data to Node.
+	- Is used to receive data since since process begins.
+- **exec:** returns a buffer:
+	- Is used to return simple state messages.
+	- Is used to receive data at the end of the process.
 
 
